@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直居中</title>
+    <style>
+        .container{
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            height: 200px;
+        }
+        .item{
+            background-color: #ccc;
+        }
+
+        .container-1{
+            /* line-height: 200px;
+            height: 200px; */
+        }
+        .container-2{
+            position: relative;
+        }
+        .container-2 .item{
+            height: 100px;
+            width: 50px;
+            position: absolute;
+            /* top: 50%;
+            margin-top: -50px; */
+        }
+        .container-3{
+            position: relative;
+        }
+        .container-3 .item{
+            height: 80px;
+            width: 50px;
+            position: absolute;
+            /*top: 50%;
+            transform: translateY(-50%); */
+        }
+
+        .container-4{
+            position: relative;
+        }
+        .container-4 .item{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top:0;bottom: 0;
+            margin: auto;
+        }
+        .container-5{
+            display: flex;
+            align-items: center;
+        }
+        .container-5 .item{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-1">
+        <span>一段文字</span>
+    </div>
+    <div class="container container-2">
+        <div class="item"></div>
+    </div>
+    <div class="container container-3">
+        <div class="item"></div>
+    </div>
+    <div class="container container-4">
+        <div class="item"></div>
+    </div>
+    <div class="container container-5">
+        <div class="item"></div>
+    </div>
+</body>
+</html>

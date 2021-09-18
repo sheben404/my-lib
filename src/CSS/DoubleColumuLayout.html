@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double column layout</title>
+    <style>       
+        /*这是对.main使用overflow:hidden(产生BFC)，实现双栏布局*/
+        /* .container{
+            border: 1px solid black;
+        }
+        .left{
+            float: left;
+            background-color: lightblue;
+            width: 100px;
+            opacity: 0.5;    
+        }
+        .main{
+            background-color:red;
+            overflow:hidden;
+        } */
+
+        /*这是使用flex布局实现的双栏布局*/
+        /* .container{
+            border: 1px solid black;
+            display: flex;
+        }
+        .left{
+            background-color: lightblue;
+            width: 100px;
+            opacity: 0.5;
+        }
+        .main{
+            background-color:red;
+            flex-grow: 1;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动
+        </div>
+        <div class="main">
+            自适应浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动浮动元素浮动
+        </div>
+    </div>
+</body>
+</html>

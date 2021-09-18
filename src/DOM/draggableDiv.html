@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Draggable Div</title>
+    <style>
+        *{box-sizing: border-box;}
+        #heart{
+            display: inline-block;
+            margin: 100px;
+            position: relative;
+            transition: all 1s;  
+        }
+        #heart:hover{
+            transform: scale(1.2);
+        }
+        #heart>.left{
+            background: red;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            transform: rotate(45deg) translateX(31px);
+            bottom: 50px;
+            left: -50px;
+            border-radius: 50% 0 0 50%;
+        }
+        #heart>.right{
+            background: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            transform: rotate(45deg) translateY(31px);
+            bottom: 50px;
+            right: -50px;
+            border-radius: 50% 50% 0 0;
+        }
+        #heart>.bottom{
+            background: red;
+            width: 50px;
+            height: 50px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heart">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+    </div>
+
+    <script>
+        
+        let dragging = false
+        let position = []
+        let xxx = document.querySelector('#heart')
+        
+        xxx.addEventListener('mousedown',e=>{
+            dragging = true
+            position = [e.clientX,e.clientY]
+        })
+        document.addEventListener('mousemove',e=>{  
+            if(dragging){
+                let deltaX = e.clientX - position[0]
+                let deltaY = e.clientY - position[1]
+                let x = parseInt(xxx.style.left || '0')
+                let y = parseInt(xxx.style.top || '0')
+                xxx.style.left = x + deltaX + 'px'
+                xxx.style.top = y + deltaY + 'px'
+            }
+            position = [e.clientX,e.clientY]
+        })
+        document.addEventListener('mouseup', e => {
+            dragging = false
+        })
+    </script>
+
+</body>
+</html>

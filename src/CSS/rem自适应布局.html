@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem 自适应布局</title>
+    <script>
+    const WIDTH = 375 // 设计稿上设备的尺寸
+    const screenWidth = screen.width //以像素为单位返回屏幕的宽度
+    const ratio = screenWidth / WIDTH
+    const fontSize = 100 * ratio // 100 是初始设置的 font-size 的大小
+    document.getElementsByTagName('html')[0].style['font-size'] = fontSize + 'px'
+    </script>
+</head>
+<body>
+</body>
+</html>

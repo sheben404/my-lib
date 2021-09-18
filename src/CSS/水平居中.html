@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平居中</title>
+    <style>
+        .container{
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+        .item{
+            background-color: #ccc;
+        }
+        .container-1 {
+            text-align: center;
+        }
+        .container-2 .item{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .container-3 {
+            position: relative;
+            height: 100px;
+        }
+        .container-3 .item{
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            /* 方法1 */
+            /* left: 50%;
+            margin-left: -150px; */
+            /* 方法2 */
+            /* left: 50%;
+            transform: translateX(-50%); */
+            /* 方法3 */
+            right: 0; left: 0;
+            margin: auto;
+        }
+        .container-4 {
+            display: flex;
+            justify-content: center;
+        }
+        .container-4 .item{
+            width: 300px;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-1">
+        <span>this is an inline item</span>
+    </div>
+    <div class="container container-2">
+        <div class="item">
+            this is a block item
+        </div>
+    </div>
+    <div class="container container-3">
+        <div class="item">
+            this is an absolute item
+        </div>
+    </div>
+    <div class="container container-4">
+        <div class="item">
+            this is a flex item
+        </div>
+    </div>
+</body>
+</html>
