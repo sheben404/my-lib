@@ -51,7 +51,7 @@ console.log(flatten(array))
 // 前置知识 [].concat(4,[5,6],[9,[10,11]]) 的结果是 [4, 5, 6, 9,[10, 11]]
 function flatten(array) {
   const isDeep = array.some(item => item instanceof Array)
-  if (!isDeep) {return array}
+  if (!isDeep) { return array }
   const res = [].concat(...array)
   return flatten(res)
 }
